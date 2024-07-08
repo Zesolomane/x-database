@@ -1,10 +1,14 @@
-const express = require('express');
+import express  from 'express'
 const app = express();
 const port = 3000;
 
 // routes
-const posts = require('./routes/posts');
-app.use('/', posts);
+// const posts = require('./routes/posts');
+import postsRoute from './routes/posts.mjs';
+import galleryRoute from './routes/gallery.mjs'
+// const gallery = require('./routes/gallery');
+app.use('/', galleryRoute)
+app.use('/', postsRoute);
 
 
 // learn about route params
