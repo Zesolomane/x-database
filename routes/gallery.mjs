@@ -9,23 +9,23 @@ import express from 'express';
 const galleryRoute  = express.Router();
 galleryRoute.get('/gallery', (req,res) => {
 
-    console.log(req.query);
-    if (req.query){
-        console.log(req.query)
-        res.send('well we got your queryt')
-    }
-    if (req.params){
-        console.log(req.params)
-        res.send('Well we got your params')
-    }
     
+    res.status(200).send('hello world');
 
-    res.send('HEHEEEFJFKSJDFNJS')
 });
+
+galleryRoute.get('/gallery/:id', (req, res)=> {
+    console.log(req.params);
+    res.send('Finding param')
+})
+galleryRoute.get('/gallery', (req,res)=>{
+    console.log(req.query);
+    res.send('finding query');
+})
 
 galleryRoute.post('/gallery', (req,res)=> {
     const { name, description, password} = req.body;
-    res.send('well we got your post')
+    res.sendStatus(200);
     
 })
 // module.exports = galleryRoute;

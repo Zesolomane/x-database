@@ -1,4 +1,5 @@
 import express from 'express';
+
 const router = express.Router();
 
 
@@ -7,7 +8,7 @@ router.get('/posts',(req,res)=> {
 });
 
 
-// router.use(express.json());
+router.use(express.json());
 // below will be the logic for the post req
 router.post('/posts', (req,res)=> {
     console.log(req.body);

@@ -6,10 +6,12 @@ const port = 3000;
 // const posts = require('./routes/posts');
 import postsRoute from './routes/posts.mjs';
 import galleryRoute from './routes/gallery.mjs'
+import loginRoute from './routes/login.mjs'
+
 // const gallery = require('./routes/gallery');
 app.use('/', galleryRoute)
 app.use('/', postsRoute);
-
+app.use('/', loginRoute)
 
 // learn about route params
 // query params
